@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'gossips/new'
+  get 'gossips/create'
   # get 'user/show'
   # get 'home/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -15,4 +17,6 @@ Rails.application.routes.draw do
   get 'welcome/:first_name', to: "welcome#show"
   get "gossip/:id", to: "gossip#show", as: 'gossip'
   get "user/:id", to: "user#show", as: 'user'
+
+  resources :gossips
 end
